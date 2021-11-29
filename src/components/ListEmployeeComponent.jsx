@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
 
+
 class ListEmployeeComponent extends Component {
     constructor(props) {
         super(props)
@@ -20,10 +21,10 @@ class ListEmployeeComponent extends Component {
         });
     }
     viewEmployee(_id){
-        this.props.history.push(`/view-employee/${_id}`);
+        this.props.history.push(`/view/${_id}`);
     }
     editEmployee(_id){
-        this.props.history.push(`/add-employee/${_id}`);
+        this.props.history.push(`/add/${_id}`);
     }
 
     componentDidMount(){
@@ -33,7 +34,7 @@ class ListEmployeeComponent extends Component {
     }
 
     addEmployee(){
-        this.props.history.push('/add-employee/_id');
+        this.props.history.push('/add/_id');
     }
 
     render() {
@@ -41,18 +42,16 @@ class ListEmployeeComponent extends Component {
             <div>
                  <h2 className="text-center">Employees List</h2>
                  <div className = "row">
-                    <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
+                    <button id="button" className="btn-primary " onClick={this.addEmployee}> Add Employee</button>
                  </div>
                  <br></br>
                  <div className = "row">
                         <table className = "table table-striped table-bordered">
-
                             <thead>
                                 <tr>
                                     <th> Employee First Name</th>
                                     <th> Employee Last Name</th>
                                     <th> Employee Email Id</th>
-                                    <th> Employee Id</th>
                                     <th> Actions</th>
                                 </tr>
                             </thead>
@@ -60,13 +59,12 @@ class ListEmployeeComponent extends Component {
                                 {
                                     this.state.employees.map(
                                         employee => 
-                                        <tr key = {employee._id}>
+                                        <tr key = {employee._id} >
                                              <td> {employee.FirstName} </td>   
                                              <td> {employee.LastName}</td>
                                              <td> {employee.email}</td>
-                                             <td> {employee._id}</td>
                                              <td>
-                                                 <button onClick={ () => this.editEmployee(employee._id)} className="btn btn-info">Update </button>
+                                                 <button onClick={ () => this.editEmployee(employee._id)} className="btn btn-warning">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee._id)} className="btn btn-danger">Delete </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee._id)} className="btn btn-info">View </button>
                                              </td>

@@ -6,7 +6,6 @@ class CreateEmployeeComponent extends Component {
         super(props)
 
         this.state = {
-            // step 2
             _id: this.props.match.params.id,
             FirstName: '',
             LastName: '',
@@ -17,10 +16,8 @@ class CreateEmployeeComponent extends Component {
         this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this);
     }
 
-    // step 3
     componentDidMount(){
 
-        // step 4
         if(this.state._id === '_id'){
             return
         }else{
@@ -47,6 +44,7 @@ class CreateEmployeeComponent extends Component {
             EmployeeService.updateEmployee(employee, this.state._id).then( res => {
                 this.props.history.push('/employees');
             });
+            this.props.history.push('/employees');
         }
     }
     
@@ -68,9 +66,9 @@ class CreateEmployeeComponent extends Component {
 
     getTitle(){
         if(this.state._id === '_id'){
-            return <h3 className="text-center">Add Employee</h3>
+            return <h2 className="text-center">Add Employee</h2>
         }else{
-            return <h3 className="text-center">Update Employee</h3>
+            return <h2 className="text-center">Update Employee</h2>
         }
     }
     render() {
@@ -79,7 +77,7 @@ class CreateEmployeeComponent extends Component {
                 <br></br>
                    <div className = "container">
                         <div className = "row">
-                            <div className = "card col-md-6 offset-md-3 offset-md-3">
+                            <div id='div' className = "col-md-6 offset-md-3">
                                 {
                                     this.getTitle()
                                 }
