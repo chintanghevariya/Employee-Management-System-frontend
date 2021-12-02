@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:9090/api/employees";
+const API_URL = "http://localhost:9000/api/employees";
     
-class EmployeeService {
+class EmpServices {
 
     getEmployees(){
         return axios.get(API_URL);
@@ -25,4 +25,4 @@ class EmployeeService {
     }
 }
 
-export default new EmployeeService()
+export default new EmpServices()

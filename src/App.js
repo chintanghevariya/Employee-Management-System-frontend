@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import ListEmployeeComponent from './components/ListEmployeeComponent';
-import CreateEmployeeComponent from './components/CreateEmployeeComponent';
-import ViewEmployeeComponent from './components/ViewEmployeeComponent';
+import ListEmployees from './components/ListEmployee';
+import CreateEmployees from './components/CreateEmployee';
+import ViewEmployees from './components/ViewEmployee';
 
 function App() {
   return (
@@ -18,15 +18,17 @@ function App() {
             </div>
                 <div className="container">
                     <Switch> 
-                          <Route path = "/" exact component = {ListEmployeeComponent}></Route>
-                          <Route path = "/employees" component = {ListEmployeeComponent}></Route>
-                          <Route path = "/add/:id" component = {CreateEmployeeComponent}></Route>
-                          <Route path = "/view/:id" component = {ViewEmployeeComponent}></Route>
+                          <Route path = "/" exact component = {ListEmployees}></Route>
+                          <Route path = "/employees" component = {ListEmployees}></Route>
+                          <Route path = "/add/:id" component = {CreateEmployees}></Route>
+                          <Route path = "/view/:id" component = {ViewEmployees}></Route>
                     </Switch>
                 </div>
                 <div>
                 <footer className = "footer">
-                    <span>Full Stack development (Assignment 2) - by Rutik Patel</span>
+                <div class="footer-copyright text-center py-3">© 2021 Copyright:
+                <span> Assignment 2 - by Chintan</span>
+                </div>
                 </footer>
             </div>
         </Router>

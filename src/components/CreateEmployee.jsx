@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import EmployeeService from '../services/EmployeeService';
+import EmployeeService from '../services/EmpService';
 
-class CreateEmployeeComponent extends Component {
+class CreateEmployee extends Component {
     constructor(props) {
         super(props)
 
@@ -77,7 +77,7 @@ class CreateEmployeeComponent extends Component {
                 <br></br>
                    <div className = "container">
                         <div className = "row">
-                            <div id='div' className = "col-md-6 offset-md-3">
+                            <div id='div' className = "col-md-6 offset-md-3 shadow-lg p-3 mb-5 bg-white rounded">
                                 {
                                     this.getTitle()
                                 }
@@ -112,4 +112,4 @@ class CreateEmployeeComponent extends Component {
     }
 }
 
-export default CreateEmployeeComponent
+export default CreateEmployee

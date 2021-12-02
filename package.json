@@ -1,7 +1,13 @@
 {
-  "name": "react-frontend",
+  "name": "assignment2",
   "version": "0.1.0",
+  "description": "Assigment 2(frontend)",
   "private": true,
+  "author": "Chintan Ghevariya",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
